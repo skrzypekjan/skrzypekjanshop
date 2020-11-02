@@ -13,10 +13,12 @@ namespace SkrzypekjanShop.Controllers
 
         private static List<Product> basket = new List<Product>();
         List<Product> products = ProductController.products;
-
+        private static double basketPrice;
+        
         // GET: Basket
         public ActionResult Index()
         {
+            ViewBag.basketPrice = "Total price: " + basketPrice;
             return View(basket);
         }
 
@@ -25,7 +27,10 @@ namespace SkrzypekjanShop.Controllers
         {
             try
             {
-                basket.Add(products.FirstOrDefault(x => x.ProductId == id));
+                var product = products.FirstOrDefault(x => x.ProductId == id);
+                basketPrice += product.Price;
+                basket.Add(product);
+                ViewBag.busketPrice = basketPrice;
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -39,7 +44,10 @@ namespace SkrzypekjanShop.Controllers
         {
             try
             {
-                basket.Remove(products.FirstOrDefault(x => x.ProductId == id));
+                var product = products.FirstOrDefault(x => x.ProductId == id);
+                basketPrice -= product.Price;
+                basket.Remove(product);
+                ViewBag.busketPrice = basketPrice;
                 return RedirectToAction(nameof(Index));
             }
             catch
