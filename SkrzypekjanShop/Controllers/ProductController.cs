@@ -11,7 +11,7 @@ namespace SkrzypekjanShop.Controllers
     public class ProductController : Controller
     {
 
-        private static List<Product> products = new List<Product>()
+        public static List<Product> products = new List<Product>()
         {
                 new Product(){ ProductId = 1, Name = "T-shirt", Photo = "https://a.allegroimg.com/s512/03a495/6b2048ee4c3297c67532a2af90ae/KOSZULKA-T-SHIRT-MESKA-JHK-TSRA-150-CZARNA-XXL", Price = 16.20 },
                 new Product(){ ProductId = 2, Name = "Trousers", Photo = "https://contents.mediadecathlon.com/p298255/ke8f7eea4f12af3b78b529dc7a0923f11/298255_default.jpg?format=auto&quality=60&f=800x0", Price = 15.50 },
