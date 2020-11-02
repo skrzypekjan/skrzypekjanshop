@@ -6,6 +6,11 @@
     background-color: white;
 }
 
+.spacings {
+    margin: 1%;
+    padding: 1%;
+}
+
 .my-shadow {
     margin: 1%;
     padding: 1%;
