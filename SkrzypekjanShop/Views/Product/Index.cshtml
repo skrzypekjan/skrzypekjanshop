@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SkrzypekjanShop.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid" style="width: 90%">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col my-shadow div-buy">
+                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                <p><img class="img-position" src="@item.Photo" /></p>
+                <h4 class="price-position">@Html.DisplayFor(modelItem => item.Price)</h4>
+                <p class="btn-position">@Html.ActionLink("Buy", "Buy", new { id = item.ProductId }, new { @class = "btn btn-primary" })</p>
+            </div>
+        }
+    </div>
+</div>

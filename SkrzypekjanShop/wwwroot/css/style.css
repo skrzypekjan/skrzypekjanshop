@@ -1,0 +1,28 @@
+﻿.div-color{
+    background-color: grey;
+}
+
+.div-buy{
+    background-color: white;
+}
+
+.my-shadow {
+    margin: 1%;
+    padding: 1%;
+    box-shadow: 3px 3px 6px black;
+}
+
+.img-position {
+    position: relative;
+    top: 50%;
+    width: 300px;
+}
+
+.price-position {
+    bottom: 0;
+    position: absolute;
+}
+
+.btn-position{
+    right:0; bottom: 0; margin-right:3%; position:absolute;
+}
