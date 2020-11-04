@@ -11,7 +11,7 @@
             <div class="col my-shadow div-buy">
                 <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
                 <p><img class="img-position" src="@item.Photo" /></p>
-                <h4 class="price-position">@Html.DisplayFor(modelItem => item.Price)</h4>
+                <h4 class="price-position">@Html.DisplayFor(modelItem => item.Price)$</h4>
                 <p class="btn-position">@Html.ActionLink("Buy", "Buy", new { id = item.ProductId }, new { @class = "btn btn-primary" })</p>
             </div>
         }
