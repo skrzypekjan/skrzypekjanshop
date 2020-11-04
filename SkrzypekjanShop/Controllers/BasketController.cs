@@ -18,8 +18,14 @@ namespace SkrzypekjanShop.Controllers
         // GET: Basket
         public ActionResult Index()
         {
-            ViewBag.basketPrice = "Total price: " + basketPrice;
+            Math.Round(basketPrice, 2, MidpointRounding.AwayFromZero);
+            ViewBag.basketPrice = "Total price: " + String.Format("{0:0.00}", basketPrice);
             return View(basket);
+        }
+
+        public ActionResult Message()
+        {
+            return View();
         }
 
         // GET: Basket/Add
@@ -30,7 +36,6 @@ namespace SkrzypekjanShop.Controllers
                 var product = products.FirstOrDefault(x => x.ProductId == id);
                 basketPrice += product.Price;
                 basket.Add(product);
-                ViewBag.busketPrice = basketPrice;
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -47,7 +52,6 @@ namespace SkrzypekjanShop.Controllers
                 var product = products.FirstOrDefault(x => x.ProductId == id);
                 basketPrice -= product.Price;
                 basket.Remove(product);
-                ViewBag.busketPrice = basketPrice;
                 return RedirectToAction(nameof(Index));
             }
             catch
