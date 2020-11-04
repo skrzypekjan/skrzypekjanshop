@@ -29,5 +29,5 @@
 }
 
 .btn-position{
-    right:0; bottom: 0; margin-right:3%; position:absolute;
+    right:0; bottom: 0; margin-right:3%; margin-bottom:3%; position:absolute;
 }
