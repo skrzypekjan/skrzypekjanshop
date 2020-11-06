@@ -12,8 +12,8 @@
 }
 
 .my-shadow {
-    margin: 1%;
-    padding: 1%;
+    margin: 3% !important;
+    padding: 3% !important;
     box-shadow: 3px 3px 6px black;
 }
 
